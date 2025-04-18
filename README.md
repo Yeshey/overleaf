@@ -1,3 +1,15 @@
+# Overleaf with full latex packages installed and ready for an arm system.
+
+# Compile for arm64;
+
+1. Clone this repo and overleaf [`toolkit`](https://github.com/overleaf/toolkit) into the same folder. (I used this [commit version](https://github.com/overleaf/toolkit/tree/895fe739417bdf4d292514036d2d65864c5d4310) of the toolkit)
+2. `make build-base` and `make build-community` from `server-ce/` directory in Overleaf repository. It creates sharelatex docker images in the system.
+3. `docker tag sharelatex/sharelatex:main sharelatex/sharelatex:5.4.0` (where 5.4.0 matches the version in the toolkit's `config/version` file)
+4. run `bin/up` from `overleaf-toolkit` directory
+And it spins up on my remote machine. (I cannot connect to it for now, but I think it's the IP problem. The image seems to work.)
+
+(you can also check [Installing Overleaf server (community edition) on Raspberry Pi](https://blog.znjoa.com/2024/11/24/installing-overleaf-community-edition-on-raspberry-pi/) witch has these instructions a bit more clearly)
+
 <h1 align="center">
   <br>
   <a href="https://www.overleaf.com"><img src="doc/logo.png" alt="Overleaf" width="300"></a>
@@ -18,6 +30,7 @@
 <p align="center">
   Figure 1: A screenshot of a project being edited in Overleaf Community Edition.
 </p>
+
 
 ## Community Edition
 
